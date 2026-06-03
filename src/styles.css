@@ -1,0 +1,261 @@
+:root {
+  color-scheme: normal;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #080a15;
+  color: #f5f7ff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(38, 65, 183, 0.22), transparent 30%),
+    linear-gradient(180deg, #0f1222 0%, #07090f 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 18px 48px;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.topbar p {
+  margin: 6px 0 0;
+  color: #bbc0d5;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #99a2d6;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+nav a.active,
+nav a:hover {
+  color: #eef2ff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.page-shell {
+  display: grid;
+  gap: 24px;
+}
+
+.hero-panel {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-panel h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+}
+
+.hero-panel p {
+  margin: 0;
+  color: #b9bfd6;
+}
+
+.hero-actions {
+  display: grid;
+  gap: 16px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-label {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  gap: 8px;
+  color: #d2d8ff;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  color: #eef2ff;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #7b8df2;
+  box-shadow: 0 0 0 3px rgba(123, 141, 242, 0.18);
+}
+
+.search-button {
+  white-space: nowrap;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: none;
+  color: #eef2ff;
+  background: linear-gradient(135deg, #6277ff, #a08fff);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #b5bce0;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(123, 141, 242, 0.35);
+}
+
+.movie-poster {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.favorite-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  background: rgba(8, 10, 21, 0.8);
+  color: #f8f8ff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.05);
+}
+
+.favorite-button.favorited {
+  color: #ff6b8a;
+  text-shadow: 0 0 14px rgba(255, 107, 138, 0.35);
+}
+
+.movie-meta {
+  padding: 18px;
+}
+
+.movie-meta h2 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #bbc0d5;
+  font-size: 0.95rem;
+}
+
+.loader,
+.notification {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.notification.error {
+  border-color: rgba(255, 96, 96, 0.2);
+  background: rgba(255, 96, 96, 0.08);
+  color: #ffb5b5;
+}
+
+.notification.info {
+  color: #d3d9ff;
+}
+
+.sentinel {
+  height: 1px;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 16px 14px 32px;
+  }
+
+  .hero-actions {
+    gap: 14px;
+  }
+}
